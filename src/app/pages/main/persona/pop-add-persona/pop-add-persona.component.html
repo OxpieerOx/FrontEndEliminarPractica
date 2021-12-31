@@ -1,0 +1,53 @@
+<section style="margin: 15px;">
+    <div>
+      <div class="redPopTitle" fxLayout="row" fxLayoutAlign="start center">
+        {{titulo}} persona
+      </div>
+      <div fxLayout="row wrap" style="overflow-y: auto; max-height: 500px;">
+        <form [formGroup]="formGruop" autocomplete="off">
+          <div fxLayout="row wrap" fxFlex="100" class="noGrey">
+            <mat-form-field fxFlex="100">
+              <mat-label>DNI</mat-label>
+              <input matInput placeholder="Ingrese DNI" name="dni"  formControlName="dni" >
+              <mat-error *ngIf="formGruop.get('dni').hasError('required')">Información requerida
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="100">
+                <mat-label>Nombres</mat-label>
+                <input matInput placeholder="Ingrese nombres" name="nombres"  formControlName="nombres" >
+                <mat-error *ngIf="formGruop.get('nombres').hasError('required')">Información requerida
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field fxFlex="100">
+                <mat-label>Apellido paterno</mat-label>
+                <input matInput placeholder="Ingrese apellido paterno" name="apellidoPaterno"  formControlName="apellidoPaterno" >
+                <mat-error *ngIf="formGruop.get('apellidoPaterno').hasError('required')">Información requerida
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field fxFlex="100">
+                <mat-label>Apellido materno</mat-label>
+                <input matInput placeholder="Ingrese apellido materno" name="apellidoMaterno"  formControlName="apellidoMaterno" >
+                <mat-error *ngIf="formGruop.get('apellidoMaterno').hasError('required')">Información requerida
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field fxFlex="100">
+                <mat-label>Edad</mat-label>
+                <input matInput placeholder="Ingrese edad" name="edad"  formControlName="edad" >
+                <mat-error *ngIf="formGruop.get('edad').hasError('required')">Información requerida
+                </mat-error>
+              </mat-form-field>
+
+          </div>
+        </form>
+      </div>
+      <div class="prevBoxCtrl txtCenter">
+        <button mat-button class="btnRed" mat-dialog-close>Cerrar</button>
+        <button mat-button class="btnRed" (click)="save(formGruop)" >Guardar</button>
+      </div>
+    </div>
+  </section>
+  

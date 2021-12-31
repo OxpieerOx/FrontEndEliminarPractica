@@ -1,0 +1,19 @@
+<div fxLayout="column" >
+    <mat-form-field class="example-full-width" >
+        <mat-label>Usuario:</mat-label>
+        <input matInput placeholder="Ingrese un usuario" name="usuario" maxlength="5" minlength="1"
+        [(ngModel)]="data.username" required>
+        
+      </mat-form-field>
+
+      <mat-form-field >
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'"  name="password" [(ngModel)]="data.password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <p>{{resultado}}</p>
+
+      <button mat-button (click)="onSubmit()">INGRESAR</button>
+</div>

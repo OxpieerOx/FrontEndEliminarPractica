@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "url": "/main/persona",
+    "activo": false,
+    "titulo": "Mantenimiento persona",
+    "icon": "user",
+    "order": 1,
+    "perfil": ["ADM", "USER"]
+  },
+  {
+    "id": 2,
+    "url": "/main/persona",
+    "activo": false,
+    "titulo": "Listar Persona",
+    "icon": "help_outline",
+    "order": 2,
+    "perfil": ["ADM"],
+    "padre":1
+  },
+  {
+    "id": 3,
+    "url": "/main/persona/list",
+    "activo": false,
+    "titulo": "Guardar Persona",
+    "icon": "save",
+    "order": 2,
+    "perfil": ["ADM"],
+    "padre":1
+  }
+]

@@ -1,0 +1,8 @@
+<mat-card style="background: palegreen">
+    <app-hijo01 ></app-hijo01>
+    <app-hijo01 tipo="nombres"></app-hijo01>
+    <app-hijo01  tipo="apellidos"></app-hijo01>
+    <app-hijo01  tipo="material" (enviar-click)="recibirEvento($event)" label="Palabra" placeholder="Ingresar palabra"></app-hijo01>
+    <app-hijo01 [mostrarA]="false" (enviar-click)="recibirEvento($event)"  tipo="material" label="Palbra2" placeholder="Ingresar palabra2"></app-hijo01>
+</mat-card>
+

@@ -1,0 +1,23 @@
+<div class="claserojo" *ngIf="tipo === 'nombres'">
+    <label>Nombre:</label>
+    <input [(ngModel)]="nombres" required/>
+</div>
+
+<div class="claserojo" *ngIf="tipo === 'id'">
+    <label>Id:</label>
+    <input type="number" [(ngModel)]="id"/>
+</div>
+
+<div class="claserojo" *ngIf="tipo === 'apellidos'">
+    <label>Apellidos:</label>
+    <input [(ngModel)]="apellidos"/>
+</div>
+
+<div  *ngIf="tipo === 'material'">
+    <mat-form-field class="example-full-width" [appearance]="apariencia">
+        <mat-label>{{label}} {{mostrarA ? '**' : ''}}</mat-label>
+        <input matInput [placeholder]="placeholder ? placeholder  : label" [name]="label" [(ngModel)]="palabra" >
+        <mat-icon matSuffix style="cursor: pointer" (click)="clickMaterial()">search</mat-icon>
+      </mat-form-field>
+</div>
+

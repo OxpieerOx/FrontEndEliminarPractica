@@ -1,0 +1,57 @@
+<div class="universe" fxLayout="column">
+    <!--  <app-header></app-header>-->
+    <section fxFlex fxLayout="row" class="principalSection" fxLayoutAlign="start stretch">
+      <!-- Sidebar (Ini) -->
+      <div class="menuContent" fxLayout="row wrap" fxLayoutAlign="space-around start">
+        <div *ngFor="let menu of listMenus" class="padreMn">
+          <button mat-flat-button [routerLink]="menu.url" routerLinkActive="select"
+                  *ngIf="!menu.hijos && menu.perfil.includes(perfil) ">
+          <span class="material-icons">
+            {{menu.icon}}
+          </span>
+            {{menu.titulo}}
+          </button>
+          <!-- AccordeonMenu (Ini) fxHide -->
+          <div class="accordMenu" *ngIf="menu.hijos && menu.perfil.includes(perfil)">
+            <mat-accordion class="">
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                  <span class="material-icons">
+                    {{menu.icon}}
+                  </span>
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    {{menu.titulo}}
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <button mat-flat-button routerLinkActive="select" *ngFor="let item of menu.hijos" [routerLink]="item.url"
+                        class="noMarginLR">
+                <span class="material-icons">
+                  {{item.icon}}
+                </span>
+                  {{item.titulo}}
+                </button>
+              </mat-expansion-panel>
+  
+            </mat-accordion>
+          </div>
+          <!-- AccordeonMenu (Fin) -->
+        </div>
+        <div class="padreMn">
+          <button mat-flat-button routerLinkActive="select" (click)="cerrarSesion()">
+          <span class="material-icons">
+            logout
+          </span>
+          Cerrar Sesión
+          </button>
+        </div>
+  
+      </div>
+      <div fxLayout="row wrap" fxFlex style="position: relative;">
+        <router-outlet></router-outlet>
+      </div>
+    </section>
+
+  </div>
+  
